@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Autores{% endblock %}
+
+{% block content %}
+    <h1>Lista de Autores</h1>
+    <a href="{% url 'añadir_autor' %}">Añadir Autor</a>
+    <ul>
+        {% for autor in autores %}
+            <li>
+                {{ autor.nombre }} - {{ autor.nacionalidad }}
+                <a href="{% url 'modificar_autor' autor.pk %}">Modificar</a>
+                <a href="{% url 'eliminar_autor' autor.pk %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

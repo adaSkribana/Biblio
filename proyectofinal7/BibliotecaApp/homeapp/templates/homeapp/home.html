@@ -1,27 +1,13 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Bienvenido a la Biblioteca{% endblock %}
 
-{% block content %}<div class="container mt-5">
-    <div class="row">
-        <!-- Tarjeta con la imagen -->
-        <div class="col-md-6">
-            <div class="glass p-4">
-                <img src="{% static 'img/perfil.png' %}" alt="Imagen" class="img-fluid rounded shadow-lg" style="max-width: 20%;">
-            </div>
-        </div>
-        <!-- Tarjeta con el texto -->
-        <div class="col-md-6">
-            <div class="glass p-4">
-                <h1 class="display-1">Hello, World!</h1>
-                <h1 class="display-1">Hola, Mundo!</h1>
-                <h2 class="display-4">My name is</h2>
-                <h2 class="display-4">Mi nombre es:</h2>
-                <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&duration=10000&pause=1000&color=DF1800&random=false&width=435&lines=Marjorie+Ramirez" alt="Typing SVG" /></a>
-            </div>
-        </div>
-    </div>
-</div>
-
+{% block content %}
+    <h1>Bienvenido a la Biblioteca</h1>
+    <p>Este proyecto permite realizar las siguientes acciones:</p>
+    <ul>
+        <li><a href="{% url 'lista_autores' %}">Gestionar Autores</a></li>
+        <li><a href="{% url 'lista_libros' %}">Gestionar Libros</a></li>
+    </ul>
 {% endblock %}
+

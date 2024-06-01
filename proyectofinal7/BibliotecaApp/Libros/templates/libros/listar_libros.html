@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Listado de Libros</title>
-</head>
-<body>
-    <h1>Listado de Libros</h1>
-    <ul>
-        {% for libro in libros %}
-            <li>{{ libro.titulo }} - {{ libro.autor.nombre }} - {{ libro.genero }} - {{ libro.año_publicacion }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_libro' %}">Agregar Libro</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+    <h1>Lista de Libros</h1>
+    <a href="{% url 'añadir_libro' %}">Añadir Libro</a>
+    {% if libros %}
+        <ul>
+            {% for libro in libros %}
+                <li>
+                    {{ Libro.titulo }} - {{ Libro.genero }} - {{ Libro.anio_publicacion }} - {{ Libro.numero_paginas }} páginas - Autor: {{ Libro.autor.nombre }}
+                    <a href="{% url 'modificar_libro' libro.pk %}">Modificar</a>
+                    <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay libros registrados.</p>
+    {% endif %}
+{% endblock %}

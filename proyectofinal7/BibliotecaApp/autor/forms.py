@@ -1,5 +1,5 @@
 from django import forms
-from models import Autor
+from .models import Autor
 
 class AutorForm(forms.ModelForm):
     class Meta:

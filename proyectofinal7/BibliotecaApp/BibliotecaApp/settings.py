@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Libros',
+    'libros',
     'autor',
     'homeapp',
 ]
@@ -121,9 +121,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    BASE_DIR / "autor/static",
-    BASE_DIR / "homeapp/static",  
-    BASE_DIR / "Libros/static",  
     ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
