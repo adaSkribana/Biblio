@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homeapp.urls'), name='homeapp'),  # Esto debe dirigir a la aplicación homeapp
+    path('', include('homeapp.urls')),  # Esto debe dirigir a la aplicación homeapp
     path('autor/', include('autor.urls')),
     path('libros/', include('libros.urls')),
 ]

@@ -10,3 +10,13 @@ class Libro(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    def get_all_fields(self):
+        return {
+            'titulo': self.titulo,
+            'genero': self.genero,
+            'anio_publicacion': self.anio_publicacion,
+            'numero_paginas': self.numero_paginas,
+            'autor': self.autor.nombre,  # Asegúrate de que el modelo Autor tenga un campo 'nombre'
+            'autor': self.autor.nacionalidad
+        }

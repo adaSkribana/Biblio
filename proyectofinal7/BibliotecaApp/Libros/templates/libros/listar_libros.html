@@ -10,7 +10,7 @@
         <ul>
             {% for libro in libros %}
                 <li>
-                    {{ Libro.titulo }} - {{ Libro.genero }} - {{ Libro.anio_publicacion }} - {{ Libro.numero_paginas }} páginas - Autor: {{ Libro.autor.nombre }}
+                    {{ libro.titulo }} - {{ libro.genero }} - {{ libro.anio_publicacion }} - {{ libro.numero_paginas }} páginas - Autor: {{ libro.autor.nombre }}
                     <a href="{% url 'modificar_libro' libro.pk %}">Modificar</a>
                     <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
                 </li>
